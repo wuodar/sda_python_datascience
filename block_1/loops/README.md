@@ -52,7 +52,6 @@ for fruit in fruits: # iterujhemy po elementach listy
         break # kończymy wykonywanie się pętli, wychodzimy z bloku "for", nie wykona się już więcej iteracji tej pętli
     print(fruit)
 ```
-
 ### &nbsp; `continue` - użycie tego słowa kluczowego powoduje zakończenie wykonywania się aktualnej iteracji pętli i rozpoczęcie następnej iteracji (niue kończy się wykonywanie pętli)
 ```python
 fruits = ["apple", "orange", "banana", "cherry"]
@@ -60,4 +59,32 @@ for fruit in fruits: # iterujhemy po elementach listy
     if fruit == "banana": # sprawdzamy czy element nie jest równy "banana"
         continue # kończymy wykonywanie się iteracji, przechodzimy do następnej iteracji pętli
     print(fruit)
+```
+## Metody `zip` oraz `enumerate`
+### &nbsp; `zip` - metoda ta służy do iterowania po wielu listach/setach/tuplach/słownikach/stringach na raz, działa następująco:
+```python
+frequences = [1,2,3]
+fruits = ["banana", "apple", "orange"]
+
+for i, fruit in zip(frequences, fruits): # funkcja zip pozwala na łączenie list/setów/słowników i równoległym iterowaniu po nich
+    print(f"There are {i} {fruit}")
+```
+output:
+```text
+There are 1 banana
+There are 2 apple
+There are 3 orange
+```
+### &nbsp; `enumerate` - metoda ta pozwala na iterowanie po obiekcie oraz po kolejnych indeksach:
+```python
+fruits = ["banana", "apple", "orange"]
+
+for i, fruit in enumerate(fruits):
+    print(f"There are {i} {fruit}")
+```
+output:
+```text
+There are 1 banana
+There are 2 apple
+There are 3 orange
 ```

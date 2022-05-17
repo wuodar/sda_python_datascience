@@ -20,3 +20,4 @@ reversed_list = list(reversed_iterator) # ponieważ funkcja reversed() zwraca it
 print("min=", min_val)
 print("max=", max_val)
 print("reversed list=", reversed_list)
+
