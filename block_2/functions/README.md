@@ -21,17 +21,17 @@ def myfunction():
   pass
 ```
 ## `*args` i `**kwargs`
-### &nbsp; `*args` - pozwala na przekazanie dowolnej ilości parametrów:
+### &nbsp; `*args` - pozwala na przekazanie dowolnej ilości parametrów, do których w ciele funkcji odwołujemy się jak do listy:
 ```python
 def my_function(*kids):
   print("The youngest child is " + kids[2])
 
 my_function("Emil", "Tobias", "Linus")
 ```
-### &nbsp; `**kwargs` - pozwala na przekazanie dowolnej ilości par parametrów klucz-wartość:
+### &nbsp; `**kwargs` - pozwala na przekazanie dowolnej ilości par parametrów klucz-wartość, do którego w ciele funkcji odwołujemy się jak do słownika:
 ```python
-def my_function(child3, child2, child1):
-  print("The youngest child is " + child3)
+def my_function(**kwargs):
+  print("His last name is " + kid["lname"])
 
-my_function(child1 = "Emil", child2 = "Tobias", child3 = "Linus") # musimy podać nazwę parametru, child1, child2...
+my_function(fname = "Tobias", lname = "Refsnes") # musimy podać nazwę parametru, child1, child2...
 ```
