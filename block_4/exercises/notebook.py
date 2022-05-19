@@ -4,13 +4,15 @@
 """
 
 class Notebook:
+    VAT_tax = 1.23
+
     def __init__(self, producent, price, amount_of_RAM):
         self.producent = producent
         self.price = price
         self.amount_of_RAM = amount_of_RAM
 
     def gross_price(self):
-        return self.price * 1.23
+        return self.price * self.VAT_tax
 
     def add_RAM(self, RAM):
         self.amount_of_RAM += RAM
