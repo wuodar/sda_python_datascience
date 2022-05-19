@@ -35,12 +35,15 @@ class HourlyEmployee(Employee):
     def __init__(self, name, position, hours_worked, hour_rate):
         self.hours_worked = hours_worked
         self.hours_rate = hour_rate
-        super().__init__(name, position)
+        #super(HourlyEmployee, self).__init__(name, position)
+        Employee.__init__(self, name, position)
 
     def calculate_payroll(self):
         self.payroll = self.hours_worked * self.hours_rate
         return self.payroll
 
+
+Pracownik0 = Employee("Maciej", "piłkarz")
 
 Pracownik1 = SalaryEmployee("Maciej", "manager", 15000)
 print(Pracownik1.calculate_payroll())

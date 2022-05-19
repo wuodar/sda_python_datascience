@@ -16,3 +16,7 @@ class Notebook:
 
     def add_RAM(self, RAM):
         self.amount_of_RAM += RAM
+
+    @classmethod
+    def change_VAT(cls, tax):
+        cls.VAT_tax = tax
