@@ -1,0 +1,2 @@
+Otwiera plik tylko do odczytu. Wskaźnik pliku jest umieszczany na początku pliku. (domyślny)
+w - Otwiera plik do zapisu. W przypadku, gdy plik nie
