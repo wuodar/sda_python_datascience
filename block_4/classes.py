@@ -23,11 +23,11 @@ class Car:
         self.speed += additional_speed
         # self.number_of_speed_ups = 10 # zła praktyka, wszystkie pola klasy powinny być zainicjowane w konstruktorze klasy (czyli metodzie __init__)
 
-    @staticmethod # staticmethod to inaczej metoda statyczna, nie wymaga ona referencji do obiektu
-    def method_without_self():
+    @staticmethod # staticmethod to inaczej metoda statyczna, nie ma dostępu do self ani cls - nie ma dostępu do danych klasy/obiektu
+    def some_static_method():
         pass
 
-    @classmethod # class method ma dostęp do klasy Car, przez co może być użyta np. do stworzenia obiektu klasy Car
+    @classmethod # class method ma dostęp do klasy Car, przez co może być użyta np. do stworzenia obiektu klasy Car, można ją rozumieć jako fabryka
     def bmw_m3(cls, registration_number):
         return cls(registration_number, "BMW", "M3")
 
