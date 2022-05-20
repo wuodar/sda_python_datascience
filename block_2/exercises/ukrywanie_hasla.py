@@ -13,12 +13,17 @@ def hide_password(password):
     new_password = ""
     password_list = list(password)
     password_indexes = range(len(password_list))
-    for i, letter in zip(password_indexes, password_list): # tak działa enumerate, które jest użyte w rozwiązaniu numer 3
-        if (i+1) % 3 == 0: # (i+1) bo indeksujemy od 0, ale w "realnym" świecie (nie komputerowym) liczymy od 1, % to operator dzielenia z resztą, zatem sprawdzamy czy ta reszta wynosi 0
-            new_password += "*" # new_password += "*" jest równoważne z new_password = new_password + "*"
+    for i, letter in zip(
+        password_indexes, password_list
+    ):  # tak działa enumerate, które jest użyte w rozwiązaniu numer 3
+        if (
+            i + 1
+        ) % 3 == 0:  # (i+1) bo indeksujemy od 0, ale w "realnym" świecie (nie komputerowym) liczymy od 1, % to operator dzielenia z resztą, zatem sprawdzamy czy ta reszta wynosi 0
+            new_password += "*"  # new_password += "*" jest równoważne z new_password = new_password + "*"
         else:
             new_password += letter
     return new_password
+
 
 # ROZWIAZANIE NUMER 2
 # def hide_password(password):

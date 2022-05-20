@@ -17,25 +17,25 @@
 list_1 = []
 list_2 = []
 
-input_val = 1 # nie chcemy 0, więc podajemy dowolną inną wartość
+input_val = 1  # nie chcemy 0, więc podajemy dowolną inną wartość
 print("Lista numer 1")
 while input_val != 0:
-    input_val_str = input("Podaj liczbe: ") # pobieramy od użytkownika wartość o typie str
+    input_val_str = input("Podaj liczbe: ")  # pobieramy od użytkownika wartość o typie str
     input_val = int(input_val_str)  # konwertujemy str do liczby całkowitej (int)
     list_1.append(input_val)  # dodajemy do listy
 
 print("Lista numer 2")
-input_val = 1 # nie chcemy 0, więc podajemy dowolną inną wartość
+input_val = 1  # nie chcemy 0, więc podajemy dowolną inną wartość
 
 while input_val != 0:
-    input_val_str = input("Podaj liczbe: ") # pobieramy od użytkownika wartość o typie str
+    input_val_str = input("Podaj liczbe: ")  # pobieramy od użytkownika wartość o typie str
     input_val = int(input_val_str)  # konwertujemy str do liczby całkowitej (int)
     list_2.append(input_val)  # dodajemy do listy
 
 
 #   ROZWIAZANIE NUMER 1 - PRZY UZYCIU LIST
-symmetric_difference = [] # tworzymy pustą listę
-for i in list_1: # iterujemy po elementach pierwszej listy
+symmetric_difference = []  # tworzymy pustą listę
+for i in list_1:  # iterujemy po elementach pierwszej listy
     if i not in list_2:  # not in - sprawdz czy element z listy list_1 (i) nie występuje w liście list_2
         symmetric_difference.append(i)  # dodanie elementu do listy, w przypadku spełnionego warunku z instrukcji if
 for j in list_2:
@@ -49,5 +49,5 @@ for j in list_2:
 #   KONIEC ROZWIĄZANIA NUMER 2
 
 
-symmetric_difference.sort() # na koniec sortujemy listę
-print(symmetric_difference) # wyprintowanie wyniku
+symmetric_difference.sort()  # na koniec sortujemy listę
+print(symmetric_difference)  # wyprintowanie wyniku
