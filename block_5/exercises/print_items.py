@@ -11,5 +11,5 @@ na przykład listę.
 
 
 # nagłówek ma zostać tak jak teraz
-def print_name_and_pets(first_name, last_name, *pets): ##
+def print_name_and_pets(first_name, last_name, *pets): #
     pass
