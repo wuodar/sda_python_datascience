@@ -7,7 +7,7 @@
 N = int(input("Podaj liczbe naturalna: "))
 
 slownik = dict()
-for i in range(1, N+1):
+for i in range(1, N + 1):
     slownik[i] = i**2
 
 print(slownik)

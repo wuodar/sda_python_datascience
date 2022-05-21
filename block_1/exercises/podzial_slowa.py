@@ -7,7 +7,7 @@
     zwrotka: Jgelna, ailoi
 """
 
-word = input("Podaj słowo: ") # input() służy do pobierania danych od użytkownika, zwraca te dane jako obiekt string
+word = input("Podaj słowo: ")  # input() służy do pobierania danych od użytkownika, zwraca te dane jako obiekt string
 
 # wykorzystujemy tzw. slicing, czyli wybieramy elementy z list wg. wzoru [start:stop:krok]
 # jeśli chcemy iterować od pierwszego elementu z listy, możemy pominąć parametr start,

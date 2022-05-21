@@ -3,14 +3,16 @@
     Klasa powinna mieć dwa pola dla boków oraz metodę area do liczenia pola prostokąta.
 """
 
-class rectangle:
 
-    def __init__(self, l, w):
-        self.length = l
-        self.width = w
+class Rectangle:
+    def __init__(self, side_1, side_2):
+        self.side_1 = side_1
+        self.side_2 = side_2
 
-    def rectangle_area(self):
-        return self.length * self.width
+    def get_area(self):
+        return self.side_1 * self.side_2
 
-newRectangle = rectangle(10, 10)
-print(newRectangle.rectangle_area())
+
+if __name__ == "__main__":
+    rectangle = Rectangle(4, 5)
+    print(f"Area of rectangle is {rectangle.get_area()}")

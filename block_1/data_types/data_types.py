@@ -62,7 +62,9 @@ item = list_1[0]
 print(item)
 
 # slicing
-sublist = list_1[1:5]  # wyciagajac elenty w list, i podajac zakres 1:5, wyciagamy de facto wartości o indeksach ze zbioru [1, 5)
+sublist = list_1[
+    1:5
+]  # wyciagajac elenty w list, i podajac zakres 1:5, wyciagamy de facto wartości o indeksach ze zbioru [1, 5)
 print(sublist)
 
 # ogólny wzór na slicing: lista[start:stop:krok]
@@ -84,6 +86,7 @@ def append_to_list(list):
     copy_list.append(a)
     return copy_list
 
+
 list_3 = [5]
 list_4 = append_to_list(list_3)
 
@@ -95,6 +98,7 @@ def append_to_string(string):
     a = "10"
     string = string + a
     return string
+
 
 base_string = "abc"
 updated_string = append_to_string(base_string)
@@ -110,18 +114,14 @@ set_3.add(111)
 #   - klucze muszą być unikalne wewnątrz danego słownika, w innym przypadku, wartości powtarzające się zostaną nadpisane
 #   - wartości mogą się powtarzać
 a = 10.5
-dictionary = {
-    "key1": "value",
-    "key1": [1,2,3],
-    a: "value3"
-}
+dictionary = {"key1": "value", "key1": [1, 2, 3], a: "value3"}
 
 message = "Hello"
-bytes_ = bytes(message, 'utf-8')
+bytes_ = bytes(message, "utf-8")
 
 print(bytes_)
 
-int_list = [1,2,3,4,5]
+int_list = [1, 2, 3, 4, 5]
 byte_ints = bytearray(int_list)
 print(byte_ints)
 
@@ -142,5 +142,3 @@ print(list_2 + list_1)
 
 set_1 = {1, 2, 3}
 set_2 = {1, 2, 6}
-
-
