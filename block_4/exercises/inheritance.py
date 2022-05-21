@@ -42,11 +42,3 @@ class HourlyEmployee(Employee):
         self.payroll = self.hours_worked * self.hours_rate
         return self.payroll
 
-
-Pracownik0 = Employee("Maciej", "piłkarz")
-
-Pracownik1 = SalaryEmployee("Maciej", "manager", 15000)
-print(Pracownik1.calculate_payroll())
-
-Pracownik2 = HourlyEmployee("Maciej", "magazynier", 160, 24)
-print(Pracownik2.calculate_payroll())
