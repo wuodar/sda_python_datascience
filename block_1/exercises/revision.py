@@ -14,36 +14,36 @@
 #   some_list[i]
 
 # kluczem może być dowolny obiekt hashowalny (int, float, bool, string, tuple, set)
-some_dict = {
-    "k1": "w1",
-    "k2": "w2",
-    ("k3", "k4"): "w3"
-}
+some_dict = {"k1": "w1", "k2": "w2", ("k3", "k4"): "w3"}
 
 
 # for k, v in some_dict.items(): # metoda items() jest metodą klasy dict, i zwraca set którego elementami są pary tupli (klucz, wartość)
 #     print("klucz=", k)
 #     print("wartosc=", v)
 
-string = f"""Potęgą liczby 5 jest {some_dict["5"]}""" # w przypadku tworzenia stringów oraz fstringow, musimy pamietac o rozroznianiu cudzysłowów występujących w stringu, oraz oznaczających jego początek i koniec
+string = f"""Potęgą liczby 5 jest {some_dict["5"]}"""  # w przypadku tworzenia stringów oraz fstringow, musimy pamietac o rozroznianiu cudzysłowów występujących w stringu, oraz oznaczających jego początek i koniec
 print(string)
 
 
-frequences = [1,2,3]
+frequences = [1, 2, 3]
 fruits = ["banana", "apple", "orange"]
 
-for fruit, freq in zip(fruits, frequences): # funkcja zip pozwala na łączenie list/setów/słowników i równoległym iterowaniu po nich
+for fruit, freq in zip(
+    fruits, frequences
+):  # funkcja zip pozwala na łączenie list/setów/słowników i równoległym iterowaniu po nich
     print(f"There are {freq} {fruit}")
 
 
 # uzycie slowa kluczowego "in" jako zapobieganie wyrzuceniu bledu przy metodzie .index(), w przypadku gdy dana wartosc nie wystepuje w liscie
 city_list = ["Warszawa", "Poznań", "Łódź", "Kraków"]
 
-def get_index_if_exists(list_in, value): # nagłówek funkcji, przyjmujemy 2 parametry
-    if value in list_in: # sprawdzamy, czy element występuje w liście
+
+def get_index_if_exists(list_in, value):  # nagłówek funkcji, przyjmujemy 2 parametry
+    if value in list_in:  # sprawdzamy, czy element występuje w liście
         return list_in.index(value)  # jeżeli tak, to zwracamy index elementu w liście
-    else: # jeśli warunek nie został spełniony
-        return -1 # zwracamy wartość -1, oznaczającą, że element nie występuje w liście
+    else:  # jeśli warunek nie został spełniony
+        return -1  # zwracamy wartość -1, oznaczającą, że element nie występuje w liście
+
 
 value_in = input("Podaj miasto, z którego pochodzisz: ")
 
