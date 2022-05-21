@@ -7,3 +7,5 @@ elif bmi > 24.5:  # jeżeli bmi większe od 24.5, ale dodatkowo jeżeli bmi jest
     result = "nadwaga"
 else:  # w przypadku nie spełnienia żadnego z wcześniejszych warunków
     results = "waga poprawna"
+
+tralalala
