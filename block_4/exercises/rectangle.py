@@ -4,15 +4,23 @@
 """
 
 
+
+# class Rectangle:
+#     def __init__(self, side_1, side_2):
+#         self.side_1 = side_1
+#         self.side_2 = side_2
+#
+#     def get_area(self):
+#         return self.side_1 * self.side_2
+#
+#
+# if __name__ == "__main__":
+#     rectangle = Rectangle(4, 5)
+#     print(f"Area of rectangle is {rectangle.get_area()}")
+
 class Rectangle:
-    def __init__(self, side_1, side_2):
-        self.side_1 = side_1
-        self.side_2 = side_2
-
-    def get_area(self):
-        return self.side_1 * self.side_2
-
-
-if __name__ == "__main__":
-    rectangle = Rectangle(4, 5)
-    print(f"Area of rectangle is {rectangle.get_area()}")
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+        def pole_prostokata(a,b):
+    print(a*b)

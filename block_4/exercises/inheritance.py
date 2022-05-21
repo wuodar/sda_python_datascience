@@ -19,28 +19,19 @@
 
 
 class Employee:
+    name = 'peter'
     def __init__(self, name, position):
         self.name = name
         self.position = position
 
 
-class SalaryEmployee(Employee):
-    def __init__(self, name, position, weekly_salary):
-        super().__init__(name, position)
+class HourlyEmployee(Employee):
+    def __init__(self, weekly_salary):
         self.weekly_salary = weekly_salary
 
 
-class HourlyEmployee(Employee):
-    def __init__(self, name, position, hours_worked, hour_rate):
-        super().__init__(name, position)
+class SalaryEmployee(Employee):
+    def __init__(self, hours_worked, hour_rate):
         self.hours_worked = hours_worked
         self.hour_rate = hour_rate
 
-    def calculate_payroll(self):
-        return self.hour_rate * self.hours_worked
-
-
-if __name__ == "__main__":
-    hourly_employee = HourlyEmployee("Kacper", "Programista", 160, 30)
-    employee_payroll = hourly_employee.calculate_payroll()
-    print(f"Employee {hourly_employee.name} payroll is {employee_payroll}")
