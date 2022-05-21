@@ -10,17 +10,19 @@ na przykład listę.
 """
 first_name = input("Podaj imię: ")
 last_name = input("Podaj nazwisko: ")
-pets = [input("Podaj imię swojego zwierzaka, wciśnij 0 aby przerwać: ")]
+pets_list = []
 
 # nagłówek ma zostać tak jak teraz
 def print_name_and_pets(first_name, last_name, *pets):
-    print(first_name, " ", last_name)
-    pets = [print(pet) for pet in pets]
-    while True:
-        if pets == "0":
-            break
+        print(first_name, " ", last_name)
+        for pet in pets_list:
+            print(pet)
 
 
-    pass
+while True:
+    pets = input("Podaj imię swojego zwierzaka, wciśnij 0 aby przerwać: ")
+    pets_list.append(pets)
+    if pets == "0":
+        break
 
-print_name_and_pets(first_name, last_name, pets)
+print_name_and_pets(first_name, last_name, pets_list)
