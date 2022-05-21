@@ -17,6 +17,35 @@
     Dodatkowo, klasy dziedziczące z klasy Employee powinny zawierać metodę calculate_payroll (oblicz wypłatę), z odpowiednią implementacją, zależnie od typu pracownika.
 """
 
+class Employee:
+
+    def __init__(self, name, position):
+        self.name = name
+        self.position = position
+
+class SalaryEmployee(Employee):
+
+    def __init__(self, name, position, weekly_salary):
+        super().__init__(name, position)
+        self.weekly_salary = weekly_salary
+
+
+class HourlyEmployee(Employee):
+
+    def __init__(self, name, position, hours_worked, hour_rate):
+        super().__init__(name, position)
+        self.hours_worked = hours_worked
+        self.hour_rate = hour_rate
+
+    def calculate_payroll(self):
+        x = self.hours_worked * self.hour_rate
+        return x
+
+hourly_employee = HourlyEmployee("Marcin", "menager", 160, 30)
+print(hourly_employee.calculate_payroll())
+
+
+
 
 class Employee:
     def __init__(self, name, position):
