@@ -10,7 +10,6 @@ Oraz w każdej kolejnej linii imię jego zwierząt.
 na przykład listę.
 """
 
-<<<<<<< HEAD
 # git stash, a potem git stash apply.
 
 name = input("Podaj imię: ") or "Giovanni"
@@ -29,18 +28,7 @@ while True:
 def print_name_and_pets(first_name, last_name, *pets):
     print(f"{first_name} {last_name} ma zwierzątka o imionach:")
 
-    for i in pets[0]:
+    for i in pets:
         print(i)
 
-print_name_and_pets(name, surname, pets_names)
-=======
-# imie = input()
-# nazwisko = input()
-# pets = []
-
-# nagłówek ma zostać tak jak teraz
-def print_name_and_pets(first_name, last_name, *pets):
-    pass
-
-# print_name_and_pets(imie, nazwisko, ...)
->>>>>>> main
+print_name_and_pets(name, surname, *pets_names)
