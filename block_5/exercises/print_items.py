@@ -9,6 +9,11 @@ Oraz w każdej kolejnej linii imię jego zwierząt.
 na przykład listę.
 """
 
+# git stash, a potem git stash apply.
+
+name = input("Podaj imię: ")
+surname = input("Podaj naziwsko: ")
+pets = list()
 
 # nagłówek ma zostać tak jak teraz
 def print_name_and_pets(first_name, last_name, *pets):
