@@ -11,10 +11,23 @@ na przykład listę.
 
 # git stash, a potem git stash apply.
 
-name = input("Podaj imię: ")
-surname = input("Podaj naziwsko: ")
-pets = list()
+name = input("Podaj imię: ") or "Giovanni"
+surname = input("Podaj naziwsko: ") or "Giorgio"
+pets_names = list()
+
+while True:
+    temp = input("Podaj nazwę zwierzątka. Jeżeli chcesz zakończyć, wciśnij 0: ")
+    if temp == "0":
+        break
+    else:
+        pets_names.append(temp)
+
 
 # nagłówek ma zostać tak jak teraz
 def print_name_and_pets(first_name, last_name, *pets):
-    pass
+    print(f"{first_name} {last_name} ma zwierzątka o imionach:")
+
+    for i in pets[0]:
+        print(i)
+
+print_name_and_pets(name, surname, pets_names)
