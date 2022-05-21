@@ -9,7 +9,20 @@ Oraz w każdej kolejnej linii imię jego zwierząt.
 na przykład listę.
 """
 
+first_name = input("Podaj imie: ")
+last_name = input("Podaj nazwisko: ")
+pets = []
+while True:
+    pet = input("Podaj zwierze: ")
+    if pet == "0":
+        break
+    else:
+        pets.append(pet)
 
 # nagłówek ma zostać tak jak teraz
 def print_name_and_pets(first_name, last_name, *pets): #
-    pass
+    print(f"{first_name} {last_name}")
+    for pet in pets[0]:
+        print(pet)
+
+print_name_and_pets(first_name, last_name, pets)
