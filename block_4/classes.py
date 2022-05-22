@@ -34,7 +34,7 @@ class Car:
     # class method ma dostęp do klasy Car, przez co może być użyta np. do stworzenia obiektu klasy Car,
     # można ją rozumieć jako fabryka
     @classmethod
-    def bmw_m3(cls, registration_number):
+    def bmw_m3(cls, registration_number) -> 'Car':
         return cls(registration_number, "BMW", "M3")
 
 
