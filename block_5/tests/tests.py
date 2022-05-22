@@ -1,21 +1,17 @@
 import unittest
 
 class Calculator:
-    def __init__(self, val_a, val_b):
-        self.val_a = val_a
-        self.val_b = val_b
-
-    def addition(a, b):
-        return a + b
-
-    def subtraction(a, b):
-        return a - b
-
-    def multiplication(a, b):
-        return a * b
-
-    def division(a, b):
-        return a / b
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+    def addition(self):
+        return self.a + self.b
+    def subtraction(self):
+        return self.a - self.b
+    def multiplication(self):
+        return self.a * self.b
+    def division(self):
+        return self.a / self.b
 
 
 class TestCalculator(unittest.TestCase):

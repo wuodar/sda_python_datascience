@@ -75,7 +75,7 @@ def avg(*args: float, x: str = "some value") -> float:
 # ------------ moduły/importy
 # importujemy klasę Car z modułu classes, podając do niego ścieżkę bezwzględną
 # czyli od folderu głównego naszego projektu
-from repo.block_4 import classes # classes to moduł, Car to klasa z modułu Classes
+from block_4 import classes # classes to moduł, Car to klasa z modułu Classes
 
 car = classes.Car("ERA CD12", "Opel", "Astra")
 # print(car.manufacturer)
