@@ -3,15 +3,15 @@
     Dopisz metody do obliczenia ceny brutto (+23% VAT) oraz zwiększenia ilości RAM-u.
 """
 
-class Notebook():
-
-    def __init__(self, producent, cena_netto, RAM):
-
-    def producent(self):
-
-    def cena_netto(self):
-
-    def RAM(self):
+# class Notebook():
+#
+#     def __init__(self, producent, cena_netto, RAM):
+#
+#     def producent(self):
+#
+#     def cena_netto(self):
+#
+#     def RAM(self):
 
 
 
