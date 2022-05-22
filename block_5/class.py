@@ -51,8 +51,6 @@ def func(param1, param2, param3="domyslna wartosc"):
 
 
 
-KONIEC ZADANKA O 11:30 (MACIE DODATKOWE)
-
 
 
 
