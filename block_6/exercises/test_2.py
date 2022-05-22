@@ -9,4 +9,10 @@ def produce_double_signs(string):
     :return: nowy napis z podwojonymi znakami.
 
     """
-    pass
+    new_string = ""
+
+    for sign in string:
+        new_string += sign
+        new_string += sign
+
+    return new_string
