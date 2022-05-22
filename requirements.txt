@@ -1,12 +1,6 @@
-numpy==1.22.4
+ipython==7.6.0
+ipython-genutils==0.2.0
+jedi==0.15.1
+requests==2.21.0
+twine==2.0.0
 
-items = [1, 2, 3]
-fun(*items) = func(1, 2, 3)
-
-**kwargs
-slownik = {
-    "k1": "item1",
-    "k2": "item2"
-}
-
-func(**slownik)
