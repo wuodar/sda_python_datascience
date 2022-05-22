@@ -18,4 +18,4 @@ def mathematical_operation(operator, *numbers):
     elif operator == "/":
         return reduce(lambda a, b: a / b, numbers)
     else:
-        print("Podałeś nieobsługiwany znak operacji lub znak nieprawidłowy.")
+        print(f"Znak {operator} jest nieobsługiwany.")
