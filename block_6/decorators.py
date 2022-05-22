@@ -1,4 +1,6 @@
-#zhtr;yekhtujt;lk'll;l;l
+qwertyuiop[]swderfghuikl
+
+
 
 # def print_hello():
 #     print("Hello")
@@ -12,7 +14,6 @@
 
 # def print_world():
 #     print("World")
-
 
 # def execeute_functions(*functions):
 #     for func in functions:
