@@ -1,7 +1,11 @@
-# pusta klasa
-class Class:  # class to słowo kluczowe oznaczające początek deifinicji klasy
-    pass
+def multiply(a: float, b: float) -> float:
+    return a * b
 
+def divide(a: float, b: float) -> float:
+    return a / b
+
+# Zmienna globalna
+GLOBAL_VALUE = 6
 
 class Car:
     # zmienna CLASS_ATTRIBUTE istnieje od początku działania programu,
@@ -36,45 +40,3 @@ class Car:
     @classmethod
     def bmw_m3(cls, registration_number) -> 'Car':
         return cls(registration_number, "BMW", "M3")
-
-
-# klasa bazowa
-class Vehicle:
-    def __init__(self, length):
-        self.speed = 0
-        self.length = length
-
-    def speed_up(self, speed):
-        self.speed += speed
-
-
-# klasa SomeCar dziedziczy z Vehicle
-class SomeCar(Vehicle):
-    def __init__(self, registry_number):
-        super().__init__(length=5)
-        self.registry_number = registry_number
-
-
-# class Bike dziedziczy z Vehicle
-class Bike(Vehicle):
-    pass
-
-
-if __name__ == "__main__":
-    # tworzenie obiektu klasy Car, aby stworzyć obiekt, musimy wywołać tą klasę, czyli dopisać ()
-    some_class = Class()
-    print(f"Typ obiektu pustej klasy Class: {type(some_class)}")
-
-    some_car = Car("ERA C3R1", "skoda", "octavia")  # inicjalizujemy obiekt, czyli tworzymy instancję klasy Car
-    bmw_m3 = Car.bmw_m3("ERA C2CJ")  # wywołanie classmethod, będącej fabryką obiektów klasy Car
-    some_car.speed_up(10)
-    bmw_m3.speed_up(20)
-    # wywołanie staticmethod
-    faster_car = Car.check_which_car_is_faster(some_car.speed, bmw_m3.speed)
-    print(f"Szybszy jest samochód numer {faster_car}")
-    
-    car = SomeCar("ERA C1D5")
-    print(car.speed)
-    car.speed_up(10)
-    print(car.speed)
-    print(car.length)

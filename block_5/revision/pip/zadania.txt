@@ -1,0 +1,19 @@
+Przed rozpoczęciem pracy z pip'em, pamiętaj swtorzyć środowisko wirtualne, jeszcze jeśli tego nie zrobiłeś (w folderze głównym repo). 
+Następnie aktywuj środowisko:
+ - linux: komenda "source nazwa_srodowiska/bin/activate"
+ - windows: komenda "nazwa_srodowiska/Scripts/activate"
+Następnie:
+1. zainstaluj biblioteki w wersjach zawartych w pliku requirements.txt w folderze głównym repo (mozesz to zrobic na dwa sposoby)
+2. sprawdz czy nie ma dostepnych nowszych wersji dla zainstalowanych bibliotek
+3. jezeli takowe sa, zaktualizuj je
+4. poszukaj informacji o zainstalowanych bibliotekach, dowiedz sie, co dostarczaja do projektu (polecam szczeg�lnie biblioteke ipython)
+5. poszukaj w pip biblioteki pylint
+6. zainstaluj biblioteke pylint w wersji wyciagnietej z poprzedniego punktu
+7. dowiedz sie, co to takiego googlujac w internecie
+8. wybierz jeden ze swoich uprzednio stworzonych plik�w pythonowych i sprawdz jego poprawnosc z wykorzystaniem pylinta (komenda: pylint <sciezka_do_pliku>)
+9. jezeli wystepuja jakies pylintowe sugestie, dokonaj poprawek; pr�buj do momentu kiedy wynik nie wyniesie 10/10
+10. jak sadzisz, gdzie i do czego moze sie przydac taka biblioteka?
+11. sprawdz jakie biblioteki sa aktualnie zainstalowane na Twoim komputerze; przekieruj wynik do pliku
+12. jaka jest r�znica miedzy poleceniami "pip list", a "pip freeze"? czy mozna z powodzeniem wykorzystac formaty generowane przez obydwie komendy (po uprzednim przekierowaniu do pliku) do zainstalowania paczki zaleznosci (bibliotek) w nowym projekcie? sprawdz
+13. odinstaluj uprzednio zainstalowana biblioteke jedi
+14. odinstaluj pozostale biblioteki, kt�rych nie bedziesz juz potrzebowal(a) -> opcjonalne
