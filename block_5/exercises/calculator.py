@@ -14,8 +14,9 @@ class Calculator:
         pass
 
     @staticmethod
-    def add(a, b):
-        return a + b
+    def add(a, b) -> float:
+        add: float = a + b
+        return add
     @staticmethod
     def subtract(a, b):
         return a - b

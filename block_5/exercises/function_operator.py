@@ -5,3 +5,5 @@ Następnie w funkcji sprawdź, jaki operator został podany, i zwróc odpowiedni
 sumę/różnicę/iloraz/iloczyn
 przekazanych liczb w zmiennej numbers (wykorzystaj do tego celu if/elif)
 """
+
+

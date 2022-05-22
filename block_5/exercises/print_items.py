@@ -23,8 +23,8 @@ while True:
 # nagłówek ma zostać tak jak teraz
 def print_name_and_pets(first_name, last_name, *pets): #
     print(f"{first_name} {last_name}")
-    for pet in pets[0]:
+    for pet in pets:
         print(pet)
 
-print_name_and_pets(first_name, last_name, pets)
+print_name_and_pets(first_name, last_name, *pets)
 
