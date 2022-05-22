@@ -13,3 +13,7 @@ Przykład:
 
     add(5,5) # 20
 """
+
+def double_result
+
+@double_result
