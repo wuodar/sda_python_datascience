@@ -1,5 +1,5 @@
 """
-Napisz program, który będzie przyjmowała od użytkownika imię i nazwisko i przypisze je do zmiennych,
+Napisz program, który będzie przyjmował od użytkownika imię i nazwisko i przypisze je do zmiennych,
 A następnie, do momentu kiedy uzytkownik nie wprowadzi wartości "0", pobiera imiona
 jego zwierząt (input) oraz również przypisze te imiona do zminnej (lista/tupla),
 a następnie napisz funkcję która będzie jako parametr przyjmowałą to imię i nazwisko,
