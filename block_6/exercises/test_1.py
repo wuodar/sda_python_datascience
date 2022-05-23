@@ -1,6 +1,7 @@
 """
 Napisz test funkcji hide_password przy użyciu biblioteki unittest
 """
+import unittest
 
 def hide_password(password):
     """Ukrywa co trzecia litere w hasle password.
@@ -16,4 +17,17 @@ def hide_password(password):
             signs[i] = "*"
 
     return "".join(signs)
+
+
+class HidePasswordTestCase(unittest.TestCase):
+
+    def test_hide_password(self):
+        password = "OzzyMiśOzzyMiśOzzyMiś"*2
+        hidden = hide_password(password)
+
+        #self.assertEqual(hidden, "Oz*yM*ś")
+
+unittest.TestCase()
+
+
 
