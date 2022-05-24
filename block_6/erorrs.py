@@ -1,3 +1,8 @@
+import logging
+
+logging.basicConfig(level=logging.ERROR)
+logger = logging.getLogger(__name__)
+
 # przykład obsługi inputu od użytkownika, który podaje złe wartości (string zamiast liczby)
 def handle_each_of_possible_errors_at_once():
     while True:
@@ -10,8 +15,7 @@ def handle_each_of_possible_errors_at_once():
             break
         # blok except wykona się tylko w przypadku, gdy w bloku try wystąpi wyjątek/error
         except (ValueError, ZeroDivisionError): # jeżeli jesteśmy w stanie stwierdzić, jakie wyjątki mogą wystąpić w naszym kodzie, powinniśmy je sprecyzować, tak jak tutaj (ValueError, ZeroDivisionError)
-            print("Podana wartość jest niepoprawna. Proszę, podaj liczbę rzeczywistą.")
-            print("Blok except")
+            logger.error("\nPodana wartość jest niepoprawna. Proszę, podaj liczbę rzeczywistą.\n")
         # blok finally wykona się niezaleznie od wystąpienia błędu/wyjątku
         # finally:
         #     print("Blok finally")
@@ -27,12 +31,11 @@ def handle_specific_errors_separately():
             break
         # blok except wykona się tylko w przypadku, gdy w bloku try wystąpi wyjątek/error
         except ValueError as e: # jeżeli jesteśmy w stanie stwierdzić, jakie wyjątki mogą wystąpić w naszym kodzie, powinniśmy je sprecyzować, tak jak tutaj ValueError
-            print(f"Wiadomosc o błędzie: {e.args[0]}")
-            print("Podana wartość jest niepoprawna. Proszę, podaj liczbę rzeczywistą.")
-            print("Blok except")
+            logger.error(f"Wiadomosc o błędzie: {e.args[0]}")
+            logger.warning("WARNING")
+            logger.error("Podana wartość jest niepoprawna. Proszę, podaj liczbę rzeczywistą.")
         except ZeroDivisionError: # jeżeli jesteśmy w stanie stwierdzić, jakie wyjątki mogą wystąpić w naszym kodzie, powinniśmy je sprecyzować, tak jak tutaj ValueError
-            print("Wartość numer dwa jest niepoprawna. Proszę, podaj liczbę rzeczywistą, różną od zera.")
-            print("Blok except")
+            logger.error("Wartość numer dwa jest niepoprawna. Proszę, podaj liczbę rzeczywistą, różną od zera.")
         # blok finally wykona się niezaleznie od wystąpienia błędu/wyjątku
         # finally:
         #     print("Blok finally")
@@ -50,3 +53,4 @@ class MyCustomException(Exception):
 def raise_my_custom_exception(error_message):
     raise MyCustomException(error_message)
 
+handle_specific_errors_separately()
