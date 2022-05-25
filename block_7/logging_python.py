@@ -11,7 +11,7 @@ import logging # paczka pythonowa służąca do logowania przebiegu programu
 
 # FORMAT = '%(name)s - %(levelname)s - %(message)s'
 # logowanie do stdout, czyli w konsoli
-# logging.basicConfig(level=logging.DEBUG, format='%(name)s-%(levelname)s-%(message)s') # basicConfig pozwala na ustawienie konfiguracji loggera, np. poziom loggingu
+logging.basicConfig(level=logging.WARNING, format='%(name)s-%(levelname)s-%(message)s') # basicConfig pozwala na ustawienie konfiguracji loggera, np. poziom loggingu
 # logowanie do pliku
 # logging.basicConfig(level=logging.DEBUG, filename='app.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
 
@@ -23,3 +23,17 @@ import logging # paczka pythonowa służąca do logowania przebiegu programu
 # logging.warning("This is warning message")
 # logging.error("This is error message")
 # logging.critical("This is critical message")
+
+def logging_decorator(func):
+    def wrapper(*args, **kwargs):
+        logging.info(f"function name = {func.__name__}\nargs = {args}\nkwargs = {kwargs}")
+        res = func(*args, **kwargs)
+        logging.info(f"function result = {res}")
+        return res
+    return wrapper
+
+@logging_decorator
+def abc(arg):
+    return arg
+
+abc("abc")
