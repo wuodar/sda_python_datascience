@@ -17,3 +17,16 @@ def hide_password(password):
 
     return "".join(signs)
 
+#print(hide_password("asdfffgsdgdsg"))
+
+import unittest
+
+class MyTest(unittest.TestCase):
+    def setUp(self) -> None:
+        print("Setting Up")
+        self.word = "ab*de*gh*"
+        self.password = "abcdefghi"
+        print(self.word)
+        print(self.password)
+    def testPass(self):
+        self.assertEqual(self.word,hide_password(self.password) )

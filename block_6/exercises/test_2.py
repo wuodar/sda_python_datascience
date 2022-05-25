@@ -16,3 +16,15 @@ def produce_double_signs(string):
         new_string += sign
 
     return new_string
+
+import unittest
+
+class MyTest(unittest.TestCase):
+    def setUp(self) -> None:
+        print("Setting Up")
+        self.word = "aabbccdd"
+        self.basicword = "abcd"
+        print(self.word)
+        print(self.basicword)
+    def testPass(self):
+        self.assertEqual(self.word,produce_double_signs(self.basicword) )
