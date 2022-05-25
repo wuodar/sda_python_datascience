@@ -22,6 +22,10 @@ class Sheep(Animal):
     def __init__(self, init_pos_limit: float, move_dist: float):
         pass
 
+    def move(self):
+        self.x_pos = self.move_dist * random.choice([-1, 0, 1])
+        self.y_pos = self.move_dist * random.choice([-1, 0, 1])
+
 
 class Wolf(Animal):
     def __init__(self, move_dist: float):
