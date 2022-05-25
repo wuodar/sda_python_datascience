@@ -1,3 +1,4 @@
+from typing import List, Optional, Tuple
 import random
 from math import dist
 
@@ -27,12 +28,12 @@ class Wolf(Animal):
         super(Wolf, self).__init__(0, 0, move_dist)
         self.eaten_sheeps = 0
 
-    def __get_closest_sheep(self, sheeps: list[Sheep]) -> tuple[int, float]:
+    def __get_closest_sheep(self, sheeps: List[Sheep]) -> Tuple[int, float]:
         """
         returns index of the closest sheep, and the distance of the sheep
         """
         pass
 
-    def chase(self, sheeps: list[Sheep]):
+    def chase(self, sheeps: List[Sheep]):
         pass
 
