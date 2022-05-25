@@ -19,14 +19,18 @@ def move_sheeps(sheeps: List[Sheep]) -> None:
 
 def run_simulation(iterations_count: int, wolf: Wolf, sheeps: List[Sheep]):
     logging.info("Starting simulation!")
+
     for i in range(iterations_count):
         move_sheeps(sheeps)
         eaten_sheep = wolf.chase(sheeps)
+
         if eaten_sheep != None:
             logging.warning(f"Wolf ate sheep number {sheeps.index(eaten_sheep)+1}")
+
         if count_alive_sheeps(sheeps) == 0:
             logging.error(f"Simulation finished! There are {count_alive_sheeps(sheeps)} alive sheeps!")
             break
+
     logging.error(f"Simulation finished! There are {count_alive_sheeps(sheeps)} alive sheeps!")
 
 

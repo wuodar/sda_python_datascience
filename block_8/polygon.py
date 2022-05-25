@@ -30,15 +30,26 @@ class Polygon(ABC):
 
 
 class Square(Polygon):
-    pass
+    def __init__(self, side):
+        self.side = side
+    def calculate_area(self) -> Union[int, float]:
+        return self.side ** 2
+
 
 
 class Rectangle(Polygon):
-    pass
-
+    def __init__(self, side_a, side_b):
+        self.side_a = side_a
+        self.side_b = side_b
+    def calculate_area(self) -> Union[int, float]:
+        return self.side_b * self.side_a
 
 class Triangle(Polygon):
-    pass
+    def __init__(self, side, high):
+        self.side = side
+        self.high = high
+    def calculate_area(self) -> Union[int, float]:
+        return self.high * self.side / 2
 
 #  możemy zaanotować listę wielokątów jako List[Polygon], ponieważ każda klasa (Square, Ractangle, Triangle) dziedziczy
 # z klasy polygon, zatem obiekty tych klas są zarazem instancjami klasy Polygon
@@ -49,13 +60,13 @@ def calculate_areas(polygons: List[Polygon]) -> List[float]:
     :return: lista obliczonych pol.
 
     """
-    pass
+    return [x.calculate_area() for x in polygons]
 
 
 if __name__ == "__main__":
-    square = Square(...)
-    triangle = Triangle(...)
-    rectangle = Rectangle(...)
+    square = Square(5)
+    triangle = Triangle(3,4)
+    rectangle = Rectangle(3,6)
 
     polygons = [square, triangle, rectangle]
     areas = calculate_areas(polygons)
