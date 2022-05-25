@@ -59,4 +59,3 @@ class TestHidePassword(unittest.TestCase):
         hidden = hide_password(password)
 
         self.assertEqual(hidden, "ab*" * 1000)
->>>>>>> main
