@@ -1,0 +1,123 @@
+Napisz program który będzie symulował wilka goniącego owce.
+
+W tym celu musisz stworzyć klasę bazową Animal
+	Klasa Animal ma zawierać pola:
+		- x_pos - pozycja x w przstrzeni dwuwymiarowej
+		- y_pos - pozycja y w przstrzeni dwuwymiarowej
+		- move_dist - o ile dane zwierze porusza się podczs jednej iteracji
+Dodatkowo klasa Animal będzie zawierać property (dekorator) o nazwie cords
+Który będzie zwracał tuple (self.x_pos, self.y_pos)
+
+	Zapis jest następujący:
+		@property
+		def cords(self):
+		    return self.x_pos, self.y_pos
+	Użycie:
+		animal = Animal(1, 1, 1)
+		animal.cords - > zwróci: (1, 1)
+
+Klasa Animal będzie zawierać dodatkowo funkcję move
+	import random # biblioteka random służy do generowania losowych wartości
+
+	# funkcja choice pobiera sekwencje i zwraca z niej losowy element
+	self.x_pos += self.move_dist * random.choice([-1, 0, 1])
+	self.y_pos += self.move_dist * random.choice([-1, 0, 1])
+
+Z klasy Animal dziedziczyć będą klasy Wolf, oraz Sheep
+	Sheep będzie zawierać w konstruktorze parametr init_pos_limit, który będzie float'em informującym o zakresie pozycji
+	możliwej do zajęcia w początkowej fazie symulacji przez owce.
+		# random.uniform() pobiera zakres wartości i zwraca wartość losową z tego zakresu
+		- x_pos = random.uniform(-init_pos_limit, init_pos_limit)
+		- y_pos = random.uniform(-init_pos_limit, init_pos_limit)
+		- move_dist - do przekazania do konstruktora klasy bazowej, Animal
+		- alive - atrybut klasy Sheep, inicjalizowany jako True podczas tworzenia obiektu (mówi nam o tym, czy owca jest żywa)
+
+	Wolf będzie tworzony zawsze w pozycji (0, 0)
+		- x_pos = 0
+		- y_pos = 0
+		- move_dist - podajemy podczas tworzenia obiektu
+		- eaten_sheeps - liczba zjedzonych owiec, ustawiana na początku na 0
+
+		Dodatkowo, klasa Wolf będzie zawierać dwie metody
+			# jeżeli macie Pythona starszego niż 3.9, to musicie pamiętać zaimportować typy do annotacji
+			# from typing import List, Tuple, Set, Dict, Optional, Union # Optional[List] - parametr opcjonalny (czyli np. list albo None)
+			# Union[List, Dict] - parametr klasy List bądź Dict (jeden z dwóch)
+			# zwracamy parę wartości (tupla) index najbliższej owcy, odległość najbliższej owcy od wilka
+			# do policzenia odległości wykorzystajcie funkcję dist z biblioteki math # import math # math.dist(cords_1, cords_2)
+			# stwórzcie listę odległości, licząc odległość wilka od kązdej z żywych owiec
+			# w pythonie aby oznaczyć wartość nieskończoną typu float, zapiszemy float("inf") (będziemy tak oznaczać odległość wiloka od nieżywych owiec, żeby nie zjadał ich dwa razy)
+			- def __get_closest_sheep(self, sheeps: List[Sheep]) -> Tuple[int, float]:
+				 ...
+			Druga metoda:
+			# w metodzie chase będziemy dokonywać pościgu owcy
+			# na początku musimy wywołać funkcję __get_closest_sheep, i zapisać index najbliższej owcy oraz odległość od wilka
+			# sheep_index, distance = self.__get_closest_sheep(sheeps)
+			# następnie musimy sprawdzić, czy odległość owcy od wilka jest mniejsza bądź równa niż move_dist wilka
+			# jeżeli tak, to musimy wybrać owcę będącą najbliżej wilka z listy owiec podanej jako parametr do funkcji chase
+			# a następnie zmienić dla tej owcy wartość atrybutu .alive na False
+			# następnie zmieniamy pozycję wilka na taką samą jak pozycja owcy
+			# ostatnim krokiem jest zwiększenie wartości atrybutu eatenb_sheeps o 1 i zwrócenie z funkcji obiektu zjedzonej owcy
+			# w przypadku, gdy wilk nie będzie wystarczająco blisko owcy, wywołujemy funkcję .move() i nie zwracamy z funkcji niczego (None)
+			- def chase(self, sheeps: List[Sheep]) -> Optional[Sheep]:
+
+Powyższy kod zawarty powinien być w pliku animals.py
+
+-----------------------------------------------------
+
+Poniższy kod ma być zawarty w pliku simulation.py
+
+Do uruchomienia symulacji, napisz funkcję
+- run_simulation(iterations_count: int, wolf: Wolf, sheeps: List[Sheep]) -> None:
+Funkcja run_simulation ma na początku zalogować: "Starting simulation!"
+Następnie, funkcja ma iteracyjnie wykonywać poniższe kroki:
+	- move_sheeps(sheeps: List[Sheep]) - funkcja move_sheeps ma za zadanie wywołać na każdym z obiektów sheep funkcję move(), ale tylko dla żywych owiec
+	- eaten_sheep: Optional[Sheep] = wolf.chase(sheeps)
+	- sprawdzamy, czy eaten_sheep nie jest None'm, jeśli nie to logujemy: "Wolf ate sheep number {sheeps.index(eaten_sheep)+1}"
+	- iterujemy do momentu, gdy liczba iteracji nie przekroczy wartości zmiennej iterations_count albo wszystkie owce nie zostaną zjedzone
+	- Na końcu, logujemy: "Simulation finished! There are {count_alive_sheeps(sheeps)} alive sheeps!"
+	- count_alive_sheeps zwraca liczbę żywych owiec
+
+
+na końcu pliku simulation, wklejcie:
+
+if __name__ == "__main__":
+    sheeps = [Sheep(10, 7) for i in range(20)]
+    wolf = Wolf(5)
+    run_simulation(30, wolf, sheeps)
+
+
+
+Przykładowe outputy z wykonania programu:
+1)
+	INFO:root:Starting simulation!
+	INFO:root:Wolf ate sheep number 19
+	INFO:root:Wolf ate sheep number 4
+	INFO:root:Wolf ate sheep number 14
+	INFO:root:Wolf ate sheep number 3
+	INFO:root:Wolf ate sheep number 1
+	INFO:root:Simulation finished! There are 15 alive sheeps!
+
+2)
+	INFO:root:Starting simulation!
+	INFO:root:Wolf ate sheep number 12
+	INFO:root:Wolf ate sheep number 18
+	INFO:root:Wolf ate sheep number 7
+	INFO:root:Wolf ate sheep number 11
+	INFO:root:Wolf ate sheep number 19
+	INFO:root:Wolf ate sheep number 10
+	INFO:root:Wolf ate sheep number 3
+	INFO:root:Wolf ate sheep number 14
+	INFO:root:Wolf ate sheep number 6
+	INFO:root:Wolf ate sheep number 1
+	INFO:root:Simulation finished! There are 10 alive sheeps!
+
+
+
+
+
+
+
+
+
+
+
