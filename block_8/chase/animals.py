@@ -15,12 +15,17 @@ class Animal:
 
     def move(self):
         # random.choice pobiera jako parametr sekwencje (lista/tupla) i zwraca losowy element
-        pass
+        self.x_pos += self.move_dist * random.choice([-1, 0, 1])
+        self.y_pos += self.move_dist * random.choice([-1, 0, 1])
 
 
 class Sheep(Animal):
     def __init__(self, init_pos_limit: float, move_dist: float):
-        pass
+        x_pos = random.uniform(-init_pos_limit, init_pos_limit)
+        y_pos = random.uniform(-init_pos_limit, init_pos_limit)
+
+        super(Sheep, self).__init__(x_pos, y_pos, move_dist)
+        self.alive = True
 
 
 class Wolf(Animal):
@@ -32,8 +37,23 @@ class Wolf(Animal):
         """
         returns index of the closest sheep, and the distance of the sheep
         """
-        pass
+        distances = [dist(self.cords, sheep.cords) if sheep.alive else float("inf") for sheep in sheeps]
+
+        minimum_distance = min(distances)
+        closest_sheep_index = distances.index(minimum_distance)
+        return closest_sheep_index, minimum_distance
 
     def chase(self, sheeps: List[Sheep]):
-        pass
+        sheep_index, distance = self.__get_closest_sheep(sheeps)
+
+        if distance <= self.move_dist:
+            sheep = sheeps[sheep_index]
+            sheep.alive = False
+            self.eaten_sheeps += 1
+            self.x_pos = sheep.x_pos
+            self.y_pos = sheep.y_pos
+            return sheep
+        else:
+            self.move()
+            return None
 
