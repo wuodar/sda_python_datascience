@@ -30,10 +30,10 @@ Z klasy Animal dziedziczyć będą klasy Wolf, oraz Sheep
 """
 class Sheep(Animal):
     def __init__(self, init_pos_limit: float, move_dist: float):
-        super().__init__(self.x_pos, self.y_pos, self.move_dist)
-        self.x_pos = random.uniform(-init_pos_limit, init_pos_limit)
-        self.y_pos = random.uniform(-init_pos_limit, init_pos_limit)
-        self.move_dist = move_dist
+        # super().__init__(self.x_pos, self.y_pos, self.move_dist)
+        x_pos = random.uniform(-init_pos_limit, init_pos_limit)
+        y_pos = random.uniform(-init_pos_limit, init_pos_limit)
+        super(Sheep, self).__init__(x_pos, y_pos, move_dist)
         self.alive = True
 """
 Wolf będzie tworzony zawsze w pozycji (0, 0)
@@ -73,15 +73,22 @@ class Wolf(Animal):
         """
         returns index of the closest sheep, and the distance of the sheep
         """
-        dist_from_wolf = [math.dist(self.cords, sheep.cords) for sheep in sheeps]
-        min_dist = min(dist_from_wolf)
-        min_dist_index = dist_from_wolf.index(min_dist)
-        return min_dist_index, min_dist
+        distances = [math.dist(self.cords, sheep.cords) if sheep.alive else float("inf") for sheep in sheeps]
+
+        minimum_distance = min(distances)
+        closest_sheep_index = distances.index(minimum_distance)
+        return closest_sheep_index, minimum_distance
 
     def chase(self, sheeps: list[Sheep]):
         sheep_index, distance = self.__get_closest_sheep(sheeps)
         if distance <= self.move_dist:
-            sheep_index.alive = False
-            return
+            sheep = sheeps[sheep_index]
+            sheep.alive = False
+            self.eaten_sheeps += 1
+            self.x_pos = sheep.x_pos
+            self.y_pos = sheep.y_pos
+            return sheep
+        else:
+            self.move()
  # [i for i in list]
 
