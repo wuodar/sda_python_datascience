@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, List
 import logging
 from animals import Sheep, Wolf
 
@@ -6,15 +6,15 @@ from animals import Sheep, Wolf
 logging.basicConfig(level=logging.INFO)
 
 
-def count_alive_sheeps(sheeps: list[Sheep]) -> int:
+def count_alive_sheeps(sheeps: List[Sheep]) -> int:
     pass
 
 
-def move_sheeps(sheeps: list[Sheep]) -> None:
+def move_sheeps(sheeps: List[Sheep]) -> None:
     pass
 
 
-def run_simulation(iterations_count: int, wolf: Wolf, sheeps: list[Sheep]):
+def run_simulation(iterations_count: int, wolf: Wolf, sheeps: List[Sheep]):
     pass
 
 if __name__ == "__main__":
