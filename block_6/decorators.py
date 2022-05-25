@@ -52,6 +52,7 @@ from time import time
 
 #  dekorator liczący czas wykonania funkcji
 def my_decorator(func):
+    @wraps(func)
     def wrapper(*args, **kwargs):
         print(f"BEFORE: {args}\n{kwargs}")
         tik = time()
@@ -66,7 +67,7 @@ def my_decorator(func):
 # wrapper = my_decorator(print_hello_v2)
 # value = wrapper("TEST")
 # print(value)
-
+from functools import wraps
 @my_decorator
 def print_hello_v2(arg):
     #  funkcja print_world_v2 ma dostęp
@@ -76,4 +77,6 @@ def print_hello_v2(arg):
     print("Hello v2")
     return print_world_v2()
 
-print_hello_v2("TEST")
+# print_hello_v2("TEST")
+
+print(print_hello_v2.__name__)
