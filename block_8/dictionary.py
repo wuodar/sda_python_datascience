@@ -20,11 +20,24 @@ Klucze mają być posortowane, od najmniejszego do największego (względem wart
 
 
 def create_dict(input_string: str) -> Dict[str, int]:
-    pass
+    # my_dict = dict()
+    # for index, value in enumerate(input_string):
+    #     my_dict[value] = index + 1
+    my_dict = {value: index+1 for index, value in enumerate(input_string)}
+    return my_dict
 
 # Any oznacza dowolny typ
 def get_keys_with_largest_values(input_dict: Dict[Any, float]) -> List[Any]:
-    pass
+    sorted_values = sorted(input_dict.values())
+    sorted_dict = dict()
+    for i in sorted_values:
+        for k in input_dict.keys():
+            if input_dict[k] == i:
+                sorted_dict[k] = input_dict[k]
+                break
+    sorted_keys = list(sorted_dict.keys())
+    # three_largest_keys = sorted_keys[:3]
+    return sorted_keys[-3:]
 
 
 if __name__ == "__main__":
