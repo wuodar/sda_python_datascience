@@ -20,11 +20,16 @@ Klucze mają być posortowane, od najmniejszego do największego (względem wart
 
 
 def create_dict(input_string: str) -> Dict[str, int]:
-    pass
+
+        dic_return ={f"{n}": f"{i+1}" for i, n in enumerate(input_string)}
+        return dic_return
 
 # Any oznacza dowolny typ
 def get_keys_with_largest_values(input_dict: Dict[Any, float]) -> List[Any]:
-    pass
+    print(input_dict)
+    print(sorted(input_dict.values(), reverse=True))
+    return input_dict
+
 
 
 if __name__ == "__main__":
