@@ -18,16 +18,22 @@ dla inputu od użytkownika "abecadło", będzie następująca wartość:
 
 def make_pretty(func):
     def wrapper(*args, **kwargs):
+        # printujemy przed wywołaniem funkcji znaki "===================="
         print("====================")
+        # wywołujemy dekorowaną funkcję i wynik jej wywołania przypisujemy do zmiennej
+        # żeby nie musieć wywoływać funkcji dwa razy
         res = func(*args, **kwargs)
         print("====================")
+        # zwracamy wynik funkcji
         return res
     return wrapper
 
 
 @make_pretty
 def print_reversed(input_str: str) -> None:
+    # odwracamy stringa, przy użyciu slicingu
     input_str_reversed = input_str[::-1]
+    # printujemy odwrócony string
     print(input_str_reversed)
 
 
