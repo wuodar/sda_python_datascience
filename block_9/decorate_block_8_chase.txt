@@ -1,0 +1,7 @@
+Napisz dekorator, który po udekorowaniu dowolnej funkcji, przed jej wykonaniem wyprintuje
+nazwę tej funkcji oraz parametry przekazane do niej. Następnie wywoła dekorowaną funkcję i wyprintuje wynik funkcji.
+Dekorator powinien printować informacje w przejrzysty sposób, oddzielając od siebie wywołania funkcji specjalnymi znakami,
+np. :
+-------------------------------------------------------------
+
+ale mogą być też inne :)
