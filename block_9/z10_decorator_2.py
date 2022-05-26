@@ -8,15 +8,21 @@ który sprawdz, czy parametr b nie jest równy 0 (nie dzielimy przez 0!).
 Jeśli tak, wyprintuj "Whoops! cannot divide" i zwróć z funkcji wartość None.
 """
 
-
 def smart_divide(func):
-    pass
-
+    def wrapper(a, b):
+        if a == 0:
+            print("Whoops! cannot divide")
+            return None
+        if b == 0:
+            print("Whoops! cannot divide")
+            return None
+        return func(a, b)
+    return wrapper
 
 @smart_divide
 def divide(a: float, b: float) -> float:
-    pass
-
+    result_divide = a / b
+    print("wynik dzielenia", result_divide)
 
 if __name__ == "__main__":
     a = 3
