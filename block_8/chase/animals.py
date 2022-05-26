@@ -21,10 +21,12 @@ class Animal:
 
 class Sheep(Animal):
     def __init__(self, init_pos_limit: float, move_dist: float):
-        self.x_pos = random.uniform(-init_pos_limit, init_pos_limit)
-        self.y_pos = random.uniform(-init_pos_limit, init_pos_limit)
-        self.move_dist = move_dist
+        x_pos = random.uniform(-init_pos_limit, init_pos_limit)
+        y_pos = random.uniform(-init_pos_limit, init_pos_limit)
+
+        super(Sheep, self).__init__(x_pos, y_pos, move_dist)
         self.alive = True
+
 
 class Wolf(Animal):
     def __init__(self, move_dist: float):

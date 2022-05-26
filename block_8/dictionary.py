@@ -21,7 +21,7 @@ Klucze mają być posortowane, od najmniejszego do największego (względem wart
 
 def create_dict(input_string: str) -> Dict[str, int]:
 
-        dic_return ={f"{n}": f"{i+1}" for i, n in enumerate(input_string)}
+        dic_return ={n: i+1 for i, n in enumerate(input_string)}
         return dic_return
 
 # Any oznacza dowolny typ
