@@ -20,9 +20,9 @@ class TestCalculator(unittest.TestCase):
         self.a = 5
         self.b = 3
         self.calculator = Calculator(self.a, self.b)
-    def tearDown(self):
+    def tearDown(self): # metoda wywoływana po skończeniu się test case'a
         print("Done")
-    def test_add(self):
+    def test_add(self): # każda metoda będąca testem, powinna zaczynać się z przedrostkiem test_
         # When
         print("Test add")
         result = self.calculator.add()
