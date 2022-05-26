@@ -1,6 +1,7 @@
 from typing import List
 import logging
 from animals import Sheep, Wolf
+from utils import timer_with_param, print_info_about_func
 
 logging.basicConfig(level=logging.INFO)
 
@@ -9,13 +10,13 @@ def count_alive_sheeps(sheeps: List[Sheep]) -> int:
     count_alive_sheeps = [1 if sheep.alive else 0 for sheep in sheeps]
     return sum(count_alive_sheeps)
 
-
+@print_info_about_func
 def move_sheeps(sheeps: List[Sheep]) -> None:
     for sheep in sheeps:
         sheep.move()
 
 
-@timer
+@timer_with_param("abc")
 def run_simulation(iterations_count: int, wolf: Wolf, sheeps: List[Sheep]):
     logging.info("Starting simulation!")
 
