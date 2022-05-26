@@ -21,6 +21,7 @@ def move_sheeps(sheeps: List[Sheep]) -> None:
             sheep.move()
 
 
+@timer
 def run_simulation(iterations_count: int, wolf: Wolf, sheeps: List[Sheep]):
     for i in range(iterations_count):
         move_sheeps(sheeps)
