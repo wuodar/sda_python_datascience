@@ -13,7 +13,7 @@ from math import sqrt
 
 class Polygon:
     def __init__(self, n_sides):
-        self.sides = [int(input(f"Podaj długość boku {i+1}: ")) for i in range(n_sides)]
+        self.sides = [i**2 for i in range(1, n_sides+1)]
 
 
 class Triangle(Polygon):

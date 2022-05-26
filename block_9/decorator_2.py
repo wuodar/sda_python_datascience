@@ -8,14 +8,28 @@ który sprawdz, czy parametr b nie jest równy 0 (nie dzielimy przez 0!).
 Jeśli tak, wyprintuj "Whoops! cannot divide" i zwróć z funkcji wartość None.
 """
 
+# rozwiazanie przy pomocy *args, **kwargs
+# def smart_divide(func):
+#     def wrapper(*args, **kwargs):
+#         if len(args) == 2:
+#             b = args[1]
+#         elif 'b' in kwargs.keys():
+#             b = kwargs['b']
+#         else:
+#             raise TypeError("Missing reuqired positional argument: 'b'")
+#         if b == 0:
+#             print("Whoops! cannot divide")
+#             return None
+#         return func(a, b)
+#     return wrapper
+
 
 def smart_divide(func):
     def wrapper(a, b):
         if b == 0:
             print("Whoops! cannot divide")
             return None
-        else:
-            return func(a,b)
+        return func(a, b)
     return wrapper
 
 
@@ -26,6 +40,5 @@ def divide(a: float, b: float) -> float:
 
 if __name__ == "__main__":
     a = 3
-    b = 6
-    res = divide(a, b)
-    print(res)
+    b = 0
+    res = divide(a=a)
