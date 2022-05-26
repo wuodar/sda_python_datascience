@@ -16,17 +16,28 @@ dla inputu od użytkownika "abecadło", będzie następująca wartość:
 """
 
 
+
 def make_pretty(func):
-    pass
+    def wrapper(*args, **kwargs):
+        print("====================")
+        rev = func(input_str)
+        print("====================")
+        return rev
+    return wrapper
+
 
 
 @make_pretty
 def print_reversed(input_str: str) -> None:
-    pass
+    reverse_string = input_str[::-1]
+    print(reverse_string)
+    return reverse_string
+
 
 
 if __name__ == "__main__":
     input_str = input("Podaj dowolną wartość: ")
 
     print_reversed(input_str)
+
 

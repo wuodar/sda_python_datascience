@@ -10,15 +10,27 @@ Jeśli tak, wyprintuj "Whoops! cannot divide" i zwróć z funkcji wartość None
 
 
 def smart_divide(func):
-    pass
+    def wrapper(a, b):
+        #div = func(a, b)
+        if b != 0:
+            div = func(a, b)
+            return div
+        else:
+            print("Whoops! cannot divide")
+            return None
+        return div
+    return wrapper
+
 
 
 @smart_divide
 def divide(a: float, b: float) -> float:
-    pass
+    result = a/b
+    return result
 
 
 if __name__ == "__main__":
     a = 3
-    b = 0
+    b = 1
     res = divide(a, b)
+    print(res)
