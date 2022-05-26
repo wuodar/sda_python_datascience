@@ -17,12 +17,17 @@ dla inputu od użytkownika "abecadło", będzie następująca wartość:
 
 
 def make_pretty(func):
-    pass
+    def wrapper(*args):
+        print("====================")
+        res = func(*args)
+        print("====================")
+        return res
+    return wrapper
 
 
 @make_pretty
 def print_reversed(input_str: str) -> None:
-    pass
+    print(input_str[::-1])
 
 
 if __name__ == "__main__":
