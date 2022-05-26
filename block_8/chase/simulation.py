@@ -14,14 +14,23 @@ def count_alive_sheeps(sheeps: List[Sheep]) -> int:
     return count_alive
     # pass
 
+def function_params(func):
+    def wrapper(*args, **kwargs):
+        function = func(sheeps)
+        print(function.__name__)
+        #print(*args, **kwargs)
 
+        return function
+    return wrapper()
+
+
+@function_params
 def move_sheeps(sheeps: List[Sheep]) -> None:
     for sheep in sheeps:
         if sheep.alive:
             sheep.move()
 
 
-@timer
 def run_simulation(iterations_count: int, wolf: Wolf, sheeps: List[Sheep]):
     for i in range(iterations_count):
         move_sheeps(sheeps)
