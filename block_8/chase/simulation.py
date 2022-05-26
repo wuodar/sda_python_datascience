@@ -1,7 +1,7 @@
 from typing import List
 import logging
 from animals import Sheep, Wolf
-
+from utils import print_name_func
 logging.basicConfig(level=logging.INFO)
 
 
@@ -18,7 +18,7 @@ def move_sheeps(sheeps: List[Sheep]) -> None:
 
 
 
-@timer
+@print_name_func
 def run_simulation(iterations_count: int, wolf: Wolf, sheeps: List[Sheep]):
     logging.info("Starting simulation!")
 

@@ -36,3 +36,11 @@ def something():
 
 # odpowiada temu zapisowi
 # something = timer_with_param("abc")(something)
+def print_name_func(func):
+    def wrapper(*args, **kwargs):
+        print("-------------------------")
+        print(args)
+        print(kwargs)
+        print(func.__name__)
+        func(*args,**kwargs)
+    return wrapper

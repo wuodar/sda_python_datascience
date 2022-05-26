@@ -1,7 +1,7 @@
 import math
 from typing import List, Optional, Tuple
 import random
-
+from utils import print_name_func
 
 
 class Animal:
@@ -48,7 +48,7 @@ class Wolf(Animal):
                 index_closest_sheep = i
         return (index_closest_sheep, closest_sheep)
 
-
+    @print_name_func
     def chase(self, sheeps: List[Sheep]):
         sheep_index, distance = self.__get_closest_sheep(sheeps)
         if distance <= self.move_dist:
