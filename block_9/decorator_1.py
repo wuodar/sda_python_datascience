@@ -15,6 +15,7 @@ dla inputu od użytkownika "abecadło", będzie następująca wartość:
     "===================="
 """
 
+
 def make_pretty(func):
     pass
 
